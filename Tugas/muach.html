@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Predikat Nilai</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        border: 2px solid;
+    }
+    #container {
+        width: 300px;
+        margin: 50px auto;
+        text-align: center;
+    }
+</style>
+</head>
+<body style="background-color: bisque;">
+<div id="container">
+    <h2>Masukkan Nilai</h2>
+    <input type="number" id="nilai" placeholder="Masukkan nilai">
+    <button onclick="hitungPredikat()">Hitung</button>
+    <p id="predikat"></p>
+</div>
+
+<script>
+    function hitungPredikat() {
+        var nilaiInput = parseInt(document.getElementById('nilai').value);
+        var predikat;
+
+        if (nilaiInput >= 91 && nilaiInput <= 100) {
+            predikat = 'A+';
+        } else if (nilaiInput >= 81 && nilaiInput <= 90) {
+            predikat = 'A';
+        } else if (nilaiInput >= 71 && nilaiInput <= 80) {
+            predikat = 'A-';
+        } else if (nilaiInput >= 61 && nilaiInput <= 70) {
+            predikat = 'B+';
+        } else if (nilaiInput >= 51 && nilaiInput <= 60) {
+            predikat = 'B';
+        } else if (nilaiInput >= 41 && nilaiInput <= 50) {
+            predikat = 'B-';
+        } else if (nilaiInput >= 31 && nilaiInput <= 40) {
+            predikat = 'C';
+        } else if (nilaiInput >= 0 && nilaiInput <= 30) {
+            predikat = 'D';
+        } else {
+            predikat = 'Nilai tidak valid';
+        }
+
+        document.getElementById('predikat').innerText = 'Predikat: ' + predikat;
+    }
+</script>
+</body>
+</html>
